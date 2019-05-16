@@ -1,0 +1,100 @@
+﻿<script>
+    function summitfilter() {
+        var form = document.getElementById("productfilterfrm");
+        form.submit();
+    }
+</script>
+<style>
+
+.le-input {
+  border-radius: 3px;
+  background-color: #ececec;
+  border: none;
+  color: #3d3d3d;
+  width: 100%;
+  padding: 5px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.le-input:focus,
+.le-input:hover {
+  background-color: #e0e0e0;
+}
+</style>
+@using WebSportOnline.Models;
+
+<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+    <div class="leftbar p-r-20 p-r-0-sm">
+        <form id="productfilterfrm" action="@Url.Action("AdvancedSearchView", "Search")" autocomplete="off">
+            <!--  -->
+            <h4 class="m-text14 p-b-7">
+                Categories
+            </h4>
+
+            <ul class="p-b-54">
+                @{
+                    CategoryModel cat = new CategoryModel();
+                    IQueryable<LoaiSP> catlist = cat.GetCategory();
+                    foreach (var item in catlist)
+                    {
+                        <li class="p-t-4">
+                            <input name="loai" class="le-checkbox" type="radio" value="@item.MaLoai" /> @item.TenLoai
+                        </li>
+                    }
+                }
+            </ul>
+
+            <h4 class="m-text14 p-b-7">
+                Filters
+            </h4>
+
+            <ul class="p-b-54">
+                @{
+                    HangSanXuatModel han = new HangSanXuatModel();
+                    IQueryable<HangSanXuat> hanlist = han.GetHangSX();
+                    foreach (var item in hanlist)
+                    {
+                        <li class="p-t-4">
+                            <input name="hangsx" class="le-checkbox" type="radio" value="@item.HangSX" /> @item.TenHang
+                        </li>
+                    }
+                }
+            </ul>
+
+            <!--  -->
+            
+
+            <div class="filter-price p-t-22 p-b-50 bo3">
+                <h4 class="m-text14 p-b-32">
+                    Price
+                </h4>
+
+                <h5>Từ  <input class="le-input" type="number" name="minprice" step="50000" /></h5>
+                
+                <h5>Đến <input class="le-input" type="number" name="maxprice" step="50000" /></h5>
+                
+                <span class="min-max">
+                    Giá: 0 VNĐ - 5000000 VNĐ
+                </span>
+                <div class="flex-sb-m flex-w p-t-16">
+                    <div class="w-size11">
+
+                        <a class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4" href='javascript:summitfilter()'>Tìm kiếm</a>
+
+                    </div>
+                    <!--<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="sTuKhoa" placeholder="Search Products...">
+            class="search-product pos-relative bo4 of-hidden"
+        <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+            <i class="fs-12 fa fa-search" aria-hidden="true"></i>
+        </button>-->
+
+                </div>
+            </div>
+
+            <!-- Search product -->           
+                
+            </form>
+</div>
+</div>

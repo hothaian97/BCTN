@@ -1,0 +1,218 @@
+﻿@model List<WebSportOnline.Models.DonhangKHModel>
+@{
+    ViewBag.Title = "Xem don hang";
+    Layout = "~/Views/Shared/GioHangLayout.cshtml";
+    <script src="~/js/themxoasuaajax.js"></script>
+}
+<style>
+    .mycart{
+    
+    background: #FFF none repeat scroll 0% 0%;
+    padding: 0px;
+    margin: 0px;
+}
+.mycart h3 {
+    text-transform: uppercase;
+    color: #DD2A01;
+    padding: 12px 0px 7px;
+    font: 700 16px tinos;
+    text-align: center;
+    margin: 0px;
+}
+.simpleCart_items {
+    border-top: 1px solid #DCDCDC;
+    font-size: 12px;
+    min-height: 90px;
+    padding: 6px 0px 6px 2px;
+    overflow: hidden;
+}
+.itemname {
+    width: 240px;
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    font: 500 14px "Roboto Condensed",Arial,sans-serif;
+    color: #444;
+}
+
+.mycart table {
+    margin: 0px 0px 38px;
+}
+div.clear {
+    clear: both;
+}
+.mycart table td {
+    font-weight: bold;
+}
+.mycart table td.numb {
+    color: #FCFF03;
+}
+.mycart .button_checkout {
+    border-top: 1px dashed #01438D;
+    padding: 3px 0px 0px;
+}
+.mycart a.simpleCart_empty {
+    display: inline-block;
+    color: red;
+    background: #FFFC04 none repeat scroll 0% 0%;
+    border-radius: 10px;
+    text-shadow: none;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 6px 16px 5px;
+    margin: 7px 8px 0px 0px;
+    float: right;
+    font-weight: bold;
+}
+.mycart a:hover{
+    color:blue;
+}
+.simpleCart_items img {
+    height: 80px;
+    width: 80px;
+    float: left;
+}
+.itemremove a {
+    font: 500 14px tinos;
+    color: #01A809;
+    position: absolute;
+    top: 43px;
+    right: 10px;
+}
+.itemphieu{
+    background: #FCFCFC none repeat scroll 0% 0%;
+    float: left;
+    position: relative;
+    padding: 6px;
+    width: 95%;
+    margin: 4px 4px 4px 20px;
+    border: 1px solid #CCC;
+    border-radius: 0px;
+}
+.itemnamemua{
+    width: 450px;
+    position: relative;
+    top: 8px;
+    left:5px;
+    font: 500 14px "Roboto Condensed",Arial,sans-serif;
+    color: black;
+    margin-bottom:10px;
+}
+.itemthumbphieu img{
+    height: 100px;
+    width: 80px;
+    float: left;
+}
+.itemnamghichu{
+    width: 100%;
+    position: relative;
+    top: 8px;
+    right: 5px;
+    left:5px;
+    font: 500 14px "Roboto Condensed",Arial,sans-serif;
+    color: black;
+    margin-bottom:10px;
+}
+.subitem{
+    float:right;
+}
+.itemnamemua i{
+    color:blue;
+}
+#itemtrangthai{
+    width: 450px;
+    position: relative;
+    top: 8px;
+    left:5px;
+    font: 500 14px "Roboto Condensed",Arial,sans-serif;
+    color: black;
+    margin-bottom:10px;
+}
+#itemtrangthai i{
+    color:red;
+    font-size:15px;
+}
+.col-md-1 {
+    width: 8.33333333%;
+  }
+.col-md-2 {
+    width: 16.66666667%;
+  }
+.col-md-4 {
+    width: 33.33333333%;
+  }
+.col-md-5 {
+    width: 41.66666667%;
+  }
+</style>
+
+<div class="row">
+    <div class="mycart">
+        <h3>Danh sách các hóa đơn bạn đã đặt hàng</h3>
+        <div class="simpleCart_items">
+            @for (int i = 0; i < @Model.Count; i++)
+            {
+                <div class="itemphieu">
+                    <div class="col-md-1 itemthumbphieu">
+                        <a href="javascript:;" onclick="ChiTietItem('@Url.Action("Chitietdonhang","Donhang")','@Model[i].donHang.MaDH')"><img src="~/images/cartphieu.jpg" alt="img" title="xem chi tiết" /></a>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="itemnamemua">
+                            <i>Tên người Mua :</i> @Model[i].nguoiMua.HoTen
+                        </div>
+                        <div class="itemnamemua">
+                            <i>Tên người nhan :</i> @Model[i].nguoiNhan
+                        </div>
+                        <div class="itemnamghichu">
+                            <i>Ghi chú :</i> @Model[i].donHang.Ghichu
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="margin-left:80px">
+                        <div class="itemnamemua">
+                            Tổng tiền : @Model[i].donHang.Tongtien VND
+                        </div>
+                        <div class="itemnamemua">
+                            Ngày mua : @Model[i].donHang.NgayDatMua
+                        </div>
+                        <div class="itemnamghichu">
+                            Địa chỉ : @Model[i].donHang.Diachi
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+
+                        @if (@Model[i].donHang.TinhTrangDH <= 1)
+                        {
+                            <div id="itemtrangthai">
+                                <i>Trạng thái : @Model[i].tinhTrangDH .</i>
+                            </div>
+                                <div class="itemnamghichu">
+                                    <a href="javascript:;" onclick="Huydonhang('@Model[i].donHang.MaDH')">Hủy đơn đặt hàng</a>
+                                </div>
+                        }
+                        else
+                        {
+                            <div id="itemtrangthai">
+                                <i>Trạng thái : @Model[i].tinhTrangDH .</i>
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            }
+
+            <div class="clear"></div>
+
+        </div>
+    </div>
+</div>
+<div id="show-dialog-detail" style="display:none">
+</div>
+
+
+
+
+
+
+
+

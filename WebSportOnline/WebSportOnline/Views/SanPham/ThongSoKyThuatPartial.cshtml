@@ -1,0 +1,54 @@
+﻿@model IQueryable<WebSportOnline.Models.ThongSoKyThuat>
+
+<style>
+    .tabled-data.no-border {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 16px;
+}
+.tabled-data.no-border li {
+  border: none;
+  line-height: 16px;
+}
+.tabled-data.inverse-bold label {
+  font-weight: normal;
+}
+.tabled-data.inverse-bold .value {
+  font-weight: 700;
+}
+.tabled-data li {
+  border-bottom: 1px solid #e0e0e0;
+  color: #3d3d3d;
+  font-size: 14px;
+  padding: 7px 0;
+}
+.tabled-data li:first-child {
+  padding-top: 0;
+}
+.tabled-data li:last-child {
+  border-bottom: 0;
+}
+.tabled-data li label {
+  margin: 0;
+  min-width: 150px;
+  font-weight: 700;
+  text-transform: capitalize;
+  display: inline-block;
+  vertical-align: top;
+}
+.tabled-data li .value {
+  display: inline-block;
+  vertical-align: top;
+  text-transform: capitalize;
+}
+</style>
+
+
+<ul class="tabled-data">
+    @foreach (var item in Model)
+    {
+        <li>
+            <label>@item.ThuocTinh</label>
+            <div class="value">@item.GiaTri</div>
+        </li>
+    }
+</ul><!-- /.tabled-data -->

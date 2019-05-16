@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AnSportModelStoreContainer" CdmEntityContainer="AnSportEntities">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="AnSportModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="AnSportModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="AnSportModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="AnSportModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BinhLuans">
+      <EntityTypeMapping TypeName="AnSportModel.BinhLuan">
+        <MappingFragment StoreEntitySet="BinhLuan">
+          <ScalarProperty Name="MaBL" ColumnName="MaBL" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DaTraLoi" ColumnName="DaTraLoi" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietDonHangs">
+      <EntityTypeMapping TypeName="AnSportModel.ChiTietDonHang">
+        <MappingFragment StoreEntitySet="ChiTietDonHang">
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonHangKHs">
+      <EntityTypeMapping TypeName="AnSportModel.DonHangKH">
+        <MappingFragment StoreEntitySet="DonHangKH">
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="PhiVanChuyen" ColumnName="PhiVanChuyen" />
+          <ScalarProperty Name="PTGiaoDich" ColumnName="PTGiaoDich" />
+          <ScalarProperty Name="NgayDatMua" ColumnName="NgayDatMua" />
+          <ScalarProperty Name="TinhTrangDH" ColumnName="TinhTrangDH" />
+          <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
+          <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Dienthoai" ColumnName="Dienthoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HangSanXuats">
+      <EntityTypeMapping TypeName="AnSportModel.HangSanXuat">
+        <MappingFragment StoreEntitySet="HangSanXuat">
+          <ScalarProperty Name="HangSX" ColumnName="HangSX" />
+          <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+          <ScalarProperty Name="TruSoChinh" ColumnName="TruSoChinh" />
+          <ScalarProperty Name="QuocGia" ColumnName="QuocGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhuyenMais">
+      <EntityTypeMapping TypeName="AnSportModel.KhuyenMai">
+        <MappingFragment StoreEntitySet="KhuyenMai">
+          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+          <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="TenCT" ColumnName="TenCT" />
+          <ScalarProperty Name="AnhCT" ColumnName="AnhCT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiSPs">
+      <EntityTypeMapping TypeName="AnSportModel.LoaiSP">
+        <MappingFragment StoreEntitySet="LoaiSP">
+          <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+          <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oauths">
+      <EntityTypeMapping TypeName="AnSportModel.Oauth">
+        <MappingFragment StoreEntitySet="Oauth">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Consumer_key" ColumnName="Consumer_key" />
+          <ScalarProperty Name="Callback" ColumnName="Callback" />
+          <ScalarProperty Name="Request_token" ColumnName="Request_token" />
+          <ScalarProperty Name="Verifier_token" ColumnName="Verifier_token" />
+          <ScalarProperty Name="Date_comsumer" ColumnName="Date_comsumer" />
+          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="ExpiresTime" ColumnName="ExpiresTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="AnSportModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="LoaiSP" ColumnName="LoaiSP" />
+          <ScalarProperty Name="SoLuotXemSP" ColumnName="SoLuotXemSP" />
+          <ScalarProperty Name="HangSX" ColumnName="HangSX" />
+          <ScalarProperty Name="XuatXu" ColumnName="XuatXu" />
+          <ScalarProperty Name="GiaGoc" ColumnName="GiaGoc" />
+          <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
+          <ScalarProperty Name="AnhNen" ColumnName="AnhNen" />
+          <ScalarProperty Name="AnhKhac" ColumnName="AnhKhac" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="isnew" ColumnName="isnew" />
+          <ScalarProperty Name="ishot" ColumnName="ishot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhamKhuyenMais">
+      <EntityTypeMapping TypeName="AnSportModel.SanPhamKhuyenMai">
+        <MappingFragment StoreEntitySet="SanPhamKhuyenMai">
+          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThongSoKyThuats">
+      <EntityTypeMapping TypeName="AnSportModel.ThongSoKyThuat">
+        <MappingFragment StoreEntitySet="ThongSoKyThuat">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="ThuocTinh" ColumnName="ThuocTinh" />
+          <ScalarProperty Name="GiaTri" ColumnName="GiaTri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trackingactions">
+      <EntityTypeMapping TypeName="AnSportModel.Trackingaction">
+        <MappingFragment StoreEntitySet="Trackingaction">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Ngaythuchien" ColumnName="Ngaythuchien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="AnSportModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="TinTucs">
+      <EntityTypeMapping TypeName="AnSportModel.TinTuc">
+        <MappingFragment StoreEntitySet="TinTuc">
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+          <ScalarProperty Name="NoiBat" ColumnName="NoiBat" />
+          <ScalarProperty Name="Moi" ColumnName="Moi" />
+          <ScalarProperty Name="HinhAnhDaiDien" ColumnName="HinhAnhDaiDien" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="IdTinTuc" ColumnName="IdTinTuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

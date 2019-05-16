@@ -1,0 +1,187 @@
+﻿@model WebSportOnline.Models.Giohang
+
+<style>
+    #checkout-page .billing-address .le-checkbox {
+  display: inline-block;
+  vertical-align: top;
+}
+#checkout-page .billing-address .placeholder {
+  text-transform: capitalize;
+}
+#checkout-page .billing-address form {
+  margin: 23px 0 0 0;
+}
+#checkout-page .billing-address .le-input {
+  padding: 9px;
+}
+#checkout-page .billing-address .field-row {
+  margin-bottom: 25px;
+}
+#checkout-page #create-account {
+  font-size: 13px;
+  line-height: 24px;
+}
+#checkout-page #shipping-address {
+  margin: 66px 0 0 0;
+}
+#checkout-page #shipping-address form {
+  margin: 24px 0 0 0;
+  font-size: 14px;
+}
+#checkout-page #your-order {
+  margin: 58px 0 0 0;
+}
+#checkout-page #your-order .order-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 24px 0 25px 0;
+}
+#checkout-page #your-order .order-item:first-child {
+  margin-top: 16px;
+}
+#checkout-page #your-order .order-item .qty {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+  margin: 14px 0 0 0;
+  color: #3d3d3d;
+}
+#checkout-page #your-order .order-item .title {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+#checkout-page #your-order .order-item .title a {
+  margin: 0 0 0 -42px;
+}
+#checkout-page #your-order .order-item .title,
+#checkout-page #your-order .order-item .title a {
+  line-height: 27px;
+  color: #3d3d3d;
+}
+#checkout-page #your-order .order-item .brand {
+  margin: 0 0 0 -42px;
+  font-size: 10px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+#checkout-page #your-order .order-item .price {
+  text-align: right;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 46px;
+}
+#checkout-page #subtotal-holder {
+  margin: 44px 0 0 0;
+}
+#checkout-page #subtotal-holder .radio-group .radio-label {
+  margin-bottom: 12px;
+}
+#checkout-page #subtotal-holder .tabled-data li label {
+  min-width: 230px;
+}
+#checkout-page #subtotal-holder .tabled-data li .value {
+  width: 140px;
+}
+#checkout-page #total-field {
+  margin-top: 11px;
+}
+#checkout-page #total-field label {
+  line-height: 24px;
+}
+#checkout-page #total-field .value {
+  font-size: 21px;
+  line-height: 30px;
+}
+#checkout-page .place-order-button {
+  text-align: right;
+  margin: 23px 0 52px 0;
+}
+#payment-method-options {
+  margin: 90px 0 0 0;
+}
+#payment-method-options .payment-method-option {
+  padding: 26px 0 25px;
+  border-bottom: 1px solid #e0e0e0;
+}
+#payment-method-options .payment-method-option:first-child {
+  padding-top: 0;
+}
+#payment-method-options .payment-method-option .radio-label {
+  vertical-align: top;
+  margin-top: -3px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+#payment-method-options .payment-method-option .fake-box {
+  margin-right: 20px;
+}
+#payment-method-options .payment-method-option .value {
+  text-transform: capitalize;
+}
+#payment-method-options .payment-method-option .value p {
+  text-transform: none;
+}
+</style>
+<section id="your-order">
+    <h2 class="h1">Đơn hàng của bạn</h2>
+    <form>
+        @for (int i = 0; i < Model.getGiohang().Count; i++)
+        {
+            <div class="row no-margin order-item">
+                <div class="col-xs-12 col-sm-1 no-margin">
+                    <a href="#" class="qty">@Model.getGiohang()[i].Soluong x</a>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <div class="title"><a href="#"> @Model.getGiohang()[i].sanPham.TenSP</a></div>
+                    <div class="brand"><a href="#"> @Model.getGiohang()[i].sanPham.HangSX</a></div>
+                </div>
+                <div class="col-xs-12 col-sm-9 no-margin">
+                    <div class="cart-img-product b-rad-4 o-f-hidden">
+                        <img src="~/Content/images/@Model.getGiohang()[i].sanPham.AnhDaiDien" alt="IMG-PRODUCT">
+                    </div>
+                </div>
+                    <div class="col-xs-12 col-sm-2 no-margin">
+                        <div class="price">@string.Format("{0:0,0}", @Model.getGiohang()[i].Thanhtien)  VNĐ</div>
+                    </div>
+                </div><!-- /.order-item -->
+        }
+    </form>
+</section><!-- /#your-order -->
+<!-- Total -->
+<div id="total-area" class="bo9 w-size18 p-l-40 p-r-40 p-t-30 p-b-38 m-t-30 m-r-0 m-l-auto p-lr-15-sm">
+    <h5 class="m-text20 p-b-24">
+        Cart Totals
+    </h5>
+
+    <!--  -->
+    <div id="subtotal-holder" class="flex-w flex-sb-m p-b-12">
+        <span class="s-text18 w-size19 w-full-sm">
+            Subtotal:
+        </span>
+
+        <span class="m-text21 w-size20 w-full-sm">
+            @string.Format("{0:0,0}", @Model.Tinhtongtiensanpham()) VNĐ
+        </span>
+
+        <span class="s-text18 w-size19 w-full-sm">
+            Shipping:
+        </span>
+
+        <div class="m-text21 w-size20 w-full-sm">
+            <div class="radio-group">
+                <input class="le-radio" type="radio" name="group1" value="free"><div class="radio-label bold">Miễn phí giao hàng</div>
+                <input class="le-radio" type="radio" name="group1" value="local" checked><div class="radio-label">local delivery<span class="bold"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <!--  -->
+    <div id="total-field" class="flex-w flex-sb-m p-t-26 p-b-30">
+        <span class="m-text22 w-size19 w-full-sm">
+            Total:
+        </span>
+
+        <span class="m-text21 w-size20 w-full-sm">
+            @string.Format("{0:0,0}", @Model.TinhtongtienCart()) VNĐ
+        </span>
+    </div>
+</div>

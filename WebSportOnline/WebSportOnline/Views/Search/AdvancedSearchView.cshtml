@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Tìm kiếm sản phẩm";
+    Layout = "~/Views/Shared/_LayoutWithSideBar.cshtml";
+}
+@using WebSportOnline.Models;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<SanPham>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $(document).on("click", "#nav_grid a[href]", function () {
+            $.ajax({
+                url: $(this).attr("href"),
+                type: 'GET',
+                cache: false,
+                success: function (result) {
+                    $('#grid-view').html(result);
+                    $('html, body').animate({
+                        scrollTop: $("#grid-view").offset().top
+                    }, 500);
+                }
+            });
+            return false;
+        });
+    });
+
+    $(document).ready(function () {
+        $(document).on("click", "#nav_list a[href]", function () {
+            $.ajax({
+                url: $(this).attr("href"),
+                type: 'GET',
+                cache: false,
+                success: function (result) {
+                    $('#list-view').html(result);
+                    $('html, body').animate({
+                        scrollTop: $("#list-view").offset().top
+                    }, 500);
+                }
+            });
+            return false;
+        });
+    });
+</script>
+
+<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
+    <!--  -->
+    <div class="flex-sb-m flex-w p-b-35">
+        <div class="flex-w">
+            <div id="popularity-sort" class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
+                <select class="selection-2" data-placeholder="sort by popularity">
+                    <option value="1">Sắp xếp theo loại</option>
+                    <option value="2">Sắp xếp theo hãng</option>
+                    <option value="3">Sắp xếp theo giá</option>
+                </select>
+            </div>
+
+            @*<div id="item-count" class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
+                <select class="selection-2">
+                    <option value="1">Tăng dần</option>
+                    <option value="2">Giảm dần</option>
+                </select>
+            </div>*@
+
+            @*<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10" >
+                <div class="search-product pos-relative bo4 of-hidden">
+                    <input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
+
+                    <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+                        <i class="fs-12 fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>*@
+            @Html.Action("SearchForm", "Search")
+        </div>
+        <div class="s-text8 p-t-5 p-b-5">
+            
+        </div>
+    </div>
+        <!-- Hiển thị sản phẩm -->
+        @Html.Action("AdvancedSearchP", "Search", new { term = ViewBag.Name, loai = ViewBag.loai, hangsx = ViewBag.hangsx, minprice = ViewBag.minprice, maxprice = ViewBag.maxprice, typeview = "grid" })
+    </div>

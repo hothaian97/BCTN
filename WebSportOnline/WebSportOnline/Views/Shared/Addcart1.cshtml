@@ -1,0 +1,49 @@
+﻿@model WebSportOnline.Models.Giohang
+
+<div class="header-wrapicon2 header-icon1 js-show-header-dropdown basket">
+    <img src="~/Content/images/icons/icon-header-02.png">
+    <span class="header-icons-noti">@Model.Tinhtongsoluongtronggio()</span>
+
+    <!-- Header cart noti -->
+    <div class="header-cart header-dropdown">
+@for (int i = 0; i < @Model.getGiohang().Count; i++)
+{
+        <ul class="header-cart-wrapitem">
+            <li class="header-cart-item">
+                <div class="header-cart-item-img">
+                    <img src="@Url.Content("~/Content/images/"+ @Model.getGiohang()[i].sanPham.AnhDaiDien)" alt="IMG">
+                </div>
+
+                <div class="header-cart-item-txt">
+                    <a class="header-cart-item-name">
+                        @Model.getGiohang()[i].sanPham.TenSP
+                    </a>
+
+                    <span class="header-cart-item-info">
+                        @string.Format("{0:0,0}", @Model.getGiohang()[i].Thanhtien) VNĐ
+                    </span>
+                </div>
+            </li>          
+        </ul>
+}
+        <div class="header-cart-total">
+            Total: @string.Format("{0:0,0}", @Model.TinhtongtienCart()) VNĐ
+        </div>
+
+        <div class="header-cart-buttons">
+            <div class="header-cart-wrapbtn">
+                <!-- Button -->
+                <a href="@Url.Action("Cart","Home")" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                    View Cart
+                </a>
+            </div>
+
+            <div class="header-cart-wrapbtn">
+                <!-- Button -->
+                <a href="@Url.Action("Checkout","Home")" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                    Check Out
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

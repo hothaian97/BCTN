@@ -1,0 +1,10 @@
+﻿
+@model IQueryable<WebSportOnline.Models.BinhLuan>
+
+<div>
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_CommentPartial", item)
+    }
+</div>
+

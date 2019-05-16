@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+<script src="@Url.Content("~/js/loadmore.js")"></script>
+<!-- Product -->
+<!-- Tab01 -->
+<div class="tab01">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#best-seller" role="tab">Sản Phẩm Mới</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#featured" role="tab">Sản Phẩm Bán Chạy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#sale" role="tab">Sản Phẩm Giảm Giá</a>
+        </li>
+        @*<li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#top-rate" role="tab">Top Rate</a>
+            </li>*@
+    </ul>
+</div>
+<div class="tab-content p-t-35">
+    <!-- - -->
+    <div class="tab-pane fade show active" id="best-seller" role="tabpanel">
+        <div id="spmoiload">
+            @Html.Action("SPMoiNhap", "Home")
+        </div>
+        <!-- Load more -->
+        <div class="size10 trans-0-4 m-t-10 m-b-10" style="margin-left:500px;">
+            <div id="sphotlink">
+                <a href='javascript:LoadMorePro(4,"SPMoiNhap","#spmoilink","#spmoiload")' class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                    Load More
+                </a>
+            </div>
+        </div> 
+    </div>
+    <div class="tab-pane fade show" id="featured" role="tabpanel">
+        <div id="spnoibat">
+            @Html.Action("SPNoiBat", "Home")
+        </div>
+        <!-- Load more -->
+        <div class="size10 trans-0-4 m-t-10 m-b-10" style="margin-left:500px;">
+            <a href='javascript:LoadMorePro(4,"SPNoiBat","#sphotlink","#spnoibat")' class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                Load More
+            </a>
+        </div> 
+    </div>
+    <div class="tab-pane fade show" id="sale" role="tabpanel">
+        <div id="spkmload">
+            @Html.Action("SPKhuyenMai", "Home")
+        </div>
+        <!-- Load more -->
+        <div class="size10 trans-0-4 m-t-10 m-b-10" style="margin-left:500px;">
+            <a href='javascript:LoadMorePro(4,"SPKhuyenMai","#spkmlink","#spkmload")' class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                Load More
+            </a>
+        </div> 
+    </div>
+</div>

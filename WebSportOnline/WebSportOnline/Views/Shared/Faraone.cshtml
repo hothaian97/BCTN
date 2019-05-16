@@ -1,0 +1,266 @@
+﻿
+@{
+    ViewBag.Title = "Faraone";
+}
+
+<!-- Banner video -->
+<section class="parallax0 parallax100" style="background-image: url(../../Content/images/slider1.jpg);">
+    <div class="overlay0 p-t-190 p-b-200">
+        <div class="flex-col-c-m p-l-15 p-r-15">
+            <span class="m-text9 p-t-45 fs-20-sm">
+                Season 2018/2019
+            </span>
+
+            <h3 class="l-text1 fs-35-sm">
+                Football
+            </h3>
+
+            <span class="btn-play s-text4 hov5 cs-pointer p-t-25" data-toggle="modal" data-target="#modal-video-01">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                Play Video
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- Blog -->
+<section class="blog bgwhite p-t-94 p-b-65">
+    <div class="container">
+        <div class="sec-title p-b-52">
+            <h3 class="m-text5 t-center">
+                Tin Tức
+            </h3>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
+                <!-- Block3 -->
+                <div class="block3">
+                    <a href="@Url.Action("NoiDung/2", "TinTuc")" class="block3-img dis-block hov-img-zoom">
+                        <img src="~/Content/images/blog/blog2.jpg" alt="IMG-BLOG">
+                    </a>
+
+                    <div class="block3-txt p-t-14">
+                        <h4 class="p-b-7">
+                            <a href="@Url.Action("NoiDung/2", "TinTuc")" class="m-text11">
+                                Đừng khóc nếu Liverpool không vô địch Premier League
+                            </a>
+                        </h4>
+
+                        <span class="s-text6">By</span> <span class="s-text7">Admin</span>
+                        <span class="s-text6">on</span> <span class="s-text7">May 12, 2019</span>
+
+                        <p class="s-text8 p-t-16">
+                            Chưa có mùa Premier League nào mà Liverpool xứng đáng vô địch như mùa này. Tuy nhiên, nếu "The Kop" không thể bước lên ngai vàng, xin các cổ động viên Liverpool đừng tuyệt vọng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
+                <!-- Block3 -->
+                <div class="block3">
+                    <a href="@Url.Action("NoiDung/3", "TinTuc")" class="block3-img dis-block hov-img-zoom">
+                        <img src="~/Content/images/blog/blog3.jpg" alt="IMG-BLOG">
+                    </a>
+
+                    <div class="block3-txt p-t-14">
+                        <h4 class="p-b-7">
+                            <a href="@Url.Action("NoiDung/3", "TinTuc")" class="m-text11">
+                                Messi, Moura dẫn đầu đội hình tiêu biểu bán kết Champions League
+                            </a>
+                        </h4>
+
+                        <span class="s-text6">By</span> <span class="s-text7">Admin</span>
+                        <span class="s-text6">on</span> <span class="s-text7">May 12, 2019</span>
+
+                        <p class="s-text8 p-t-16">
+                            Barcelona bị loại, song cá nhân Lionel Messi xứng đáng được ca ngợi. Anh cùng Divock Origi và Lucas Moura lĩnh xướng hàng công đội hình tiêu biểu bán kết Champions League 2018/19.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
+                <!-- Block3 -->
+                <div class="block3">
+                    <a href="@Url.Action("NoiDung/4", "TinTuc")" class="block3-img dis-block hov-img-zoom">
+                        <img src="~/Content/images/blog/blog4.jpg" alt="IMG-BLOG">
+                    </a>
+
+                    <div class="block3-txt p-t-14">
+                        <h4 class="p-b-7">
+                            <a href="@Url.Action("NoiDung/4", "TinTuc")" class="m-text11">
+                                Bayern lỡ chức vô địch sớm vì sai lầm của công nghệ VAR
+                            </a>
+                        </h4>
+
+                        <span class="s-text6">By</span> <span class="s-text7">Admin</span>
+                        <span class="s-text6">on</span> <span class="s-text7">May 12, 2019</span>
+
+                        <p class="s-text8 p-t-16">
+                            Lễ ăn mừng danh hiệu Bundesliga của Bayern Munich đã bị trì hoãn sau khi họ hòa 0-0 trước RB Leipzig, với quyết định gây tranh cãi từ công nghệ video hỗ trợ trọng tài VAR.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Instagram -->
+@*<section class="instagram p-t-20">
+    <div class="sec-title p-b-52 p-l-15 p-r-15">
+        <h3 class="m-text5 t-center">
+             follow us on Instagram
+        </h3>
+    </div>
+
+    <div class="flex-w">
+        <!-- Block4 -->
+        <div class="block4 wrap-pic-w">
+            <img src="~/Content/images/gallery-03.jpg" alt="IMG-INSTAGRAM">
+
+            <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
+                <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
+                    <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
+                    <span class="p-t-2">39</span>
+                </span>
+
+                <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
+                    <p class="s-text10 m-b-15 h-size1 of-hidden">
+                        Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                    </p>
+
+                    <span class="s-text9">
+                        Photo by nancyward
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Block4 -->
+        <div class="block4 wrap-pic-w">
+            <img src="~/Content/images/gallery-07.jpg" alt="IMG-INSTAGRAM">
+
+            <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
+                <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
+                    <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
+                    <span class="p-t-2">39</span>
+                </span>
+
+                <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
+                    <p class="s-text10 m-b-15 h-size1 of-hidden">
+                        Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                    </p>
+
+                    <span class="s-text9">
+                        Photo by nancyward
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Block4 -->
+        <div class="block4 wrap-pic-w">
+            <img src="~/Content/images/gallery-09.jpg" alt="IMG-INSTAGRAM">
+
+            <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
+                <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
+                    <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
+                    <span class="p-t-2">39</span>
+                </span>
+
+                <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
+                    <p class="s-text10 m-b-15 h-size1 of-hidden">
+                        Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                    </p>
+
+                    <span class="s-text9">
+                        Photo by nancyward
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Block4 -->
+        <div class="block4 wrap-pic-w">
+            <img src="~/Content/images/gallery-13.jpg" alt="IMG-INSTAGRAM">
+
+            <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
+                <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
+                    <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
+                    <span class="p-t-2">39</span>
+                </span>
+
+                <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
+                    <p class="s-text10 m-b-15 h-size1 of-hidden">
+                        Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                    </p>
+
+                    <span class="s-text9">
+                        Photo by nancyward
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Block4 -->
+        <div class="block4 wrap-pic-w">
+            <img src="~/Content/images/gallery-15.jpg" alt="IMG-INSTAGRAM">
+
+            <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
+                <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
+                    <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
+                    <span class="p-t-2">39</span>
+                </span>
+
+                <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
+                    <p class="s-text10 m-b-15 h-size1 of-hidden">
+                        Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                    </p>
+
+                    <span class="s-text9">
+                        Photo by nancyward
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>*@
+
+<!-- Shipping -->
+<section class="shipping bgwhite p-t-62 p-b-46">
+    <div class="flex-w p-l-15 p-r-15">
+        <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+            <h4 class="m-text12 t-center">
+                Free Delivery Worldwide
+            </h4>
+
+            <a href="#" class="s-text11 t-center">
+                Click here for more info
+            </a>
+        </div>
+
+        <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
+            <h4 class="m-text12 t-center">
+                30 Days Return
+            </h4>
+
+            <span class="s-text11 t-center">
+                Simply return it within 30 days for an exchange.
+            </span>
+        </div>
+
+        <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+            <h4 class="m-text12 t-center">
+                Store Opening
+            </h4>
+
+            <span class="s-text11 t-center">
+                Shop open from Monday to Sunday
+            </span>
+        </div>
+    </div>
+</section>
+

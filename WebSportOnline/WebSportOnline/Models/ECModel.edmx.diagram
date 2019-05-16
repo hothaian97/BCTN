@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7d9df31b0d3441cdad9dc58acdb1f070" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="AnSportModel.AspNetRole" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.AspNetUser" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.BinhLuan" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.ChiTietDonHang" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.DonHangKH" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.HangSanXuat" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.KhuyenMai" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.LoaiSP" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.Oauth" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.SanPham" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.SanPhamKhuyenMai" Width="1.5" PointX="8.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.ThongSoKyThuat" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnSportModel.Trackingaction" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="AnSportModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_BinhLuan_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_DonHangKH_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_BinhLuan_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_ChiTietDonHang_DonHangKH" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_ChiTietDonHang_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_SanPham_HangSanXuat" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_SanPhamKhuyenMai_KhuyenMai" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_SanPham_LoaiSP" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_SanPhamKhuyenMai_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.FK_ThongSoKyThuat_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="AnSportModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AnSportModel.TinTuc" Width="1.5" PointX="10.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

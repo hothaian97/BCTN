@@ -1,0 +1,247 @@
+﻿@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/ProductDetailLayout.cshtml";
+}
+@model WebSportOnline.Models.SanPham
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $(document).on("click", "div[href]", function () {
+            $.ajax({
+                url: url,
+                type: 'GET',
+                cache: false,
+                success: function (result) {
+                    $('#Comments').html(result);
+                    $('html, body').animate({
+                        scrollTop: $("#reviews").offset().top
+                    }, 500);
+                }
+            });
+            return true;
+        });
+    });
+</script>
+
+<style>
+  .comment-item {
+  margin-bottom: 20px;
+}
+.comment-item .comment-body {
+  position: relative;
+  padding: 21px;
+  border: 1px solid #e0e0e0;
+}
+.comment-item .comment-body:before,
+.comment-item .comment-body:after {
+  content: "";
+  border-width: 7.5px 10px 7.5px 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  top: 20px;
+}
+.comment-item .comment-body:before {
+  left: -10px;
+  border-color: transparent #e0e0e0 transparent transparent;
+}
+.comment-item .comment-body:after {
+  left: -8px;
+  border-color: transparent #fff transparent transparent;
+}
+.comment-item .comment-body .author {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.comment-item .comment-body .comment-text {
+  margin: 16px 0 7px 0!important;
+}
+.comment-item .comment-body .date {
+  font-size: 14px;
+  line-height: 26px;
+}
+</style>
+
+
+<!-- Product Detail -->
+<div class="container bgwhite p-t-35 p-b-80">
+    <div class="flex-w flex-sb">
+        <div class="w-size13 p-t-30 respon5">
+            <div class="wrap-slick3 flex-sb flex-w">
+                <div class="wrap-slick3-dots"></div>
+
+                <div class="slick3">
+                    <div class="item-slick3" data-thumb="@Url.Content("~/Content/images/")@Model.AnhDaiDien">
+                        <div class="wrap-pic-w">
+                            <img src="@Url.Content("~/Content/images/")@Model.AnhDaiDien" alt="IMG-PRODUCT">
+                        </div>
+                    </div>
+
+                    <div class="item-slick3" data-thumb="@Url.Content("~/Content/images/")@Model.AnhNen">
+                        <div class="wrap-pic-w">
+                            <img src="@Url.Content("~/Content/images/")@Model.AnhNen" alt="IMG-PRODUCT">
+                        </div>
+                    </div>
+
+                    <div class="item-slick3" data-thumb="@Url.Content("~/Content/images/")@Model.AnhKhac">
+                        <div class="wrap-pic-w">
+                            <img src="@Url.Content("~/Content/images/")@Model.AnhKhac" alt="IMG-PRODUCT">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-size14 p-t-30 respon5">
+            <h4 class="product-detail-name m-text16 p-b-13">
+                @Model.TenSP
+            </h4>
+
+            <span class="m-text17">
+                @string.Format("{0:0,0}", Model.GiaTien) VNĐ
+            </span>
+
+            <p class="s-text8 p-t-10">
+                <div class="availability">
+                    <label>Tình trạng:</label> @if (@Model.SoLuong > 0)
+                    {<span class="available"> Còn hàng </span> }
+                    else
+                    {<span class="not-available">Hết hàng</span> }
+                </div>
+            </p>
+
+            <!--  -->
+            <div class="p-t-33 p-b-60">
+                <div class="flex-m flex-w p-b-10">
+                    <div class="s-text15 w-size15 t-center">
+                        Size
+                    </div>
+
+                    <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+                        <select class="selection-2" name="size">
+                            <option>Choose an option</option>
+                            <option>Size S</option>
+                            <option>Size M</option>
+                            <option>Size L</option>
+                            <option>Size XL</option>
+                        </select>
+                    </div>
+                </div>
+
+                @*<div class="flex-m flex-w">
+                    <div class="s-text15 w-size15 t-center">
+                        Color
+                    </div>
+
+                    <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
+                        <select class="selection-2" name="color">
+                            <option>Choose an option</option>
+                            <option>Gray</option>
+                            <option>Red</option>
+                            <option>Black</option>
+                            <option>Blue</option>
+                        </select>
+                    </div>
+                </div>*@
+
+                <div class="flex-r-m flex-w p-t-10">
+                    <div class="w-size16 flex-m flex-w">
+                        <div class="flex-w bo5 of-hidden m-r-22 m-t-10 m-b-10">
+                            <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
+                                <i class="fs-12 fa fa-minus" href="javascript:;" aria-hidden="true"></i>
+                            </button>
+
+                            @*<input class="size8 m-text18 t-center num-product" type="number" name="num-product" value="1">*@
+                            <input name="quantity" class="size8 m-text18 t-center num-product sl" readonly="readonly" type="text" value="1" />
+                            <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
+                                <i class="fs-12 fa fa-plus" href="javascript:;" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
+                            <!-- Button -->
+                            <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" href="javascript:;" onclick="Addcart('@Model.MaSP',0)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-b-45">
+                <span class="s-text8 m-r-35">@*<a href="@Url.Action("AdvancedSearchView", "Search", new { loai = Model.LoaiSP })"/>*@Loại sản phẩm: @Model.LoaiSP1.TenLoai</span>
+                <span class="s-text8">@*<a href="@Url.Action("AdvancedSearchView", "Search", new { loai = Model.HangSX })"/>*@Danh mục: @Model.HangSanXuat.TenHang</span>
+            </div>
+
+            <!-- Mô tả -->
+            <div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
+                <h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
+                    Mô tả sản phẩm
+                    <i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
+                    <i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+                </h5>
+
+                <div class="dropdown-content dis-none p-t-15 p-b-23">
+                    <p class="s-text8">
+                        @Html.Raw(@Model.MoTa)
+                    </p>
+                    @*<div class="inline">
+                        <label>Loại:</label>
+                        <span><a href="@Url.Action("AdvancedSearchView", "Search", new { loai = Model.LoaiSP })">@Model.LoaiSP1.TenLoai</a></span>
+                    </div><!-- /.inline -->
+                    
+                    <div class="inline">
+                        <label>Hãng sản xuất:</label>
+                        <span><a href="@Url.Action("AdvancedSearchView", "Search", new { loai = Model.HangSX })">@Model.HangSanXuat.TenHang</a></span>
+                    </div><!-- /.inline -->*@
+                </div>
+            </div>
+
+            <div class="wrap-dropdown-content bo7 p-t-15 p-b-14">
+                <h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
+                    Thông tin thêm
+                    <i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
+                    <i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+                </h5>
+
+                <div class="dropdown-content dis-none p-t-15 p-b-23">
+                    <p class="s-text8">
+                        @Html.Action("ThongSoKyThuat", "SanPham", new { MaSP = Model.MaSP })
+                    </p>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<div href="#reviews" class="wrap-dropdown-content bo7 p-t-15 p-b-14 active-dropdown-content" style="margin-left:30px;margin-right:30px">
+    <div class="tab-pane" id="reviews">
+        <div class="comments" id="Comments">
+            @Html.Action("LoadComment", "Comment", new RouteValueDictionary { { "masp", @Model.MaSP } })
+        </div>
+            <div class="add-review row">
+                <div class="col-sm-8 col-xs-12">
+                    <div class="new-review-form">
+                        @Html.Action("AddComment", "Comment", new RouteValueDictionary { { "masp", @Model.MaSP } })
+                    </div><!-- /.new-review-form -->
+                </div><!-- /.col -->
+            </div>
+    </div>
+</div>
+        @Html.Action("Loadsplienquan", "SanPham", new { maloai = @Model.LoaiSP, sl = 6 });
+
+<script type="text/javascript">
+            $('.le-quantity a').click(function (e) {
+                e.preventDefault();
+                var currentQty = $(this).parent().parent().find('input').val();
+                if ($(this).hasClass('minus') && currentQty > 0) {
+                    $(this).parent().parent().find('input').val(parseInt(currentQty, 10) - 1);
+                } else {
+                    if ($(this).hasClass('plus')) {
+                        $(this).parent().parent().find('input').val(parseInt(currentQty, 10) + 1);
+                    }
+                }
+            });
+</script>        

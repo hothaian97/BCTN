@@ -1,0 +1,74 @@
+﻿@using Microsoft.AspNet.Identity
+@model WebSportOnline.Models.BinhLuan
+
+<script>
+    function test() {
+        $('html, body').animate({
+            scrollTop: $("#reviews").offset().top
+        }, 500);
+        $('#HoTen').val('');
+        $('#NoiDung').val('');
+    }
+</script>
+<style>
+    .le-input {
+  border-radius: 3px;
+  background-color: #ececec;
+  border: none;
+  color: #3d3d3d;
+  width: 100%;
+  padding: 5px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.le-input:focus,
+.le-input:hover {
+  background-color: #e0e0e0;
+}
+</style>
+
+<h5>
+    Viết bình luận
+    </h5>
+    @using (Ajax.BeginForm("AddComment", "Comment", null, new AjaxOptions { UpdateTargetId = "Comments", OnSuccess = "test" }, new { @id = "contact-form", @class = "contact-form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaSP, new { htmlAttributes = new { @class = "le-input" } })
+        <div class="row field-row">
+            @if (!Request.IsAuthenticated)
+            {
+                <div class="col-xs-12 col-sm-6">
+                    @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "le-input", placeholder = "Họ tên của bạn" } })
+                    @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "le-input", placeholder = "Email của bạn" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-12 col-sm-6">
+                    <label>Xin chào @ViewBag.Name bạn thấy sản phẩm này như thế nào?</label>
+                </div>
+            }
+        </div>
+        @*rate bang star*@
+        @*<div class="field-row star-row">
+                <label>your rating</label>
+                <div class="star-holder">
+                    <div class="star big" data-score="0"></div>
+                </div>
+            </div>*@<!-- /.field-row -->
+        <div class="field-row">
+            @*<label>Sản phẩm này như thế nào?</label>*@
+            @Html.TextAreaFor(model => model.NoiDung, new { @class = "le-input", @rows = "5" })
+            @Html.ValidationMessageFor(model => model.NoiDung, "", new { @class = "text-danger" })
+        </div><!-- /.field-row -->
+        <div class="buttons-holder">
+            <button type="submit" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" style="width:100px;height:35px;" formmethod="post">Gửi</button>
+        </div><!-- /.buttons-holder -->
+    }

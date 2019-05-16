@@ -1,0 +1,81 @@
+﻿@model WebSportOnline.Models.LoginViewModel
+
+<style>
+    .social-auth-buttons {
+        padding: 15px 0 25px 0;
+    }
+
+    .field-row label {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      color: #3d3d3d;
+      text-transform: capitalize;
+    }
+    .field-row input {
+      width: 100%;
+    }
+
+    .le-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.le-input:focus,
+.le-input:hover {
+  background-color: #e0e0e0;
+}
+
+.blog-post-author .media > .pull-left {
+  margin-right: 28px;
+}
+</style>
+
+<h2 class="bordered">Đăng nhập</h2>
+<p>Bạn có thể đăng nhập với:</p>
+
+<div class="social-auth-buttons">
+    <div class="row">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+
+        @*<div class="col-md-6">
+                <button class="btn-block btn-lg btn btn-twitter"><i class="fa fa-twitter"></i> Sign In with Twitter</button>
+            </div>*@
+    </div>
+</div>
+
+@using (Html.BeginForm("Login", "Account", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form cf-style-1", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="field-row">
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName, new { @class = "le-input" })
+        @Html.ValidationMessageFor(m => m.UserName)
+    </div>
+    <div class="field-row">
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password, new { @class = "le-input" })
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+    <div class="field-row clearfix">
+        <span class="pull-left">
+            @Html.CheckBoxFor(m => m.RememberMe, new { @class = "le-checbox auto-width inline" })<span class="content-color bold"> Duy trì đăng nhập</span>
+        </span>
+        <span class="pull-right">
+            <a href="#" class="content-color bold">Quên mật khẩu ?</a>
+        </span>
+    </div>
+    <div class="size15 trans-0-4">
+        <input type="submit" value="Đăng nhập" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" />
+    </div>
+}

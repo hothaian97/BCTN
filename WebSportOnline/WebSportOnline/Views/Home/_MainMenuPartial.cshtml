@@ -1,0 +1,37 @@
+﻿@using WebSportOnline.Models;
+@model List<MenuItem>
+
+<!-- Menu -->
+<div class="wrap_menu">
+    <nav class="menu">
+        <ul class="main_menu">
+            <li>
+                <a href="@Url.Action("Index", "Home")">Home</a>
+            </li>
+            @foreach (var item in Model)
+            {               
+                    <li>
+                        <a href="@Url.Action("AdvancedSearchView", "Search", new { loai = item.LoaiSP.MaLoai })">@item.LoaiSP.TenLoai</a>
+                        <ul class="sub_menu">
+                            @foreach (var i in item.HangSX)
+                            {                             
+                                <li><a href="@Url.Action("AdvancedSearchView", "Search", new { loai = item.LoaiSP.MaLoai, hangsx = i.HangSX })">@i.TenHang</a></li>
+                            }
+                        </ul>
+                    </li>
+            }
+            <li>
+                <a href="@Url.Action("Index","TinTuc")">Tin Tức</a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("About","Home")">Thông Tin</a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Contact","Home")">Liên Hệ</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
